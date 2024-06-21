@@ -1,0 +1,31 @@
+Cola Circular: Es una cola la cuál cuándo llega a la máxima capacidad de elementos, se añaden los siguientes elementos
+al comienzo de la cola sobreescribiendo al elemento mas antiguo.
+
+Cola Circular implementada con un arreglo: Esto se refiere a qué cuándo se llega al final del arreglo, la siguiente
+inserción no ocurre al final del mismo, sino que cuando no hay mas espacio se añade el siguiente elemento al principio
+del arreglo y se sobreescribe el último.
+
+
+poneEnCola(unElemento)
+ Si Cola.lleno() entonces hacer
+   devolver null
+ Sino
+   Cola.Vector[cola.fin] = unElemento
+   Cola.fin = (Cola.fin + 1) % TamañoVector //Esto lo hacemos para llegar a la primera posición, ya que el residuo siempre
+nos va a dar 0, lo que nos va a permitir volver al principio del Array y insertar el elemento(cola.fin + 1) el siguiente 
+elemento cuándo la capacidad del vector esta excedida.
+
+
+
+algoritmo quitarDeCola()
+
+Si Cola.vacia() entonces hacer
+   devolver null
+Sino
+  elemento = cola.vector[cola.inicio]
+  cola.inicio = (cola.inicio + 1) % TamañoVector.
+  devolver elemento
+
+
+//Cuando eliminamos un elemento, el inicio de la cola tiene que pasar al último elemento, y cuándo llegamos al
+//último elemento hacemos el modulo de la longitud del vector para que así apuntemos al primer elemento del Array.
